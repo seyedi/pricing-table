@@ -1,0 +1,136 @@
+html {
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+@font-face {
+  font-family: Tanha;
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Tanha-FD.woff2") format("woff2"); }
+
+body {
+  background-color: #eee;
+  font: 100%/1.6 'Tanha', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  body:lang(en) {
+    font: 100%/1.7 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+section {
+  margin: 4rem 0; }
+
+.pricing-table-wrapper {
+  max-width: 71rem;
+  margin: 0 auto; }
+
+.pricing-table {
+  --pricing-table-color: hsl(219, 83%, 57%);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+  grid-gap: 2em;
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none; }
+  .pricing-table__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 1.5em;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 200ms cubic-bezier(0.02, 0.01, 0.47, 1), transform 200ms cubic-bezier(0.02, 0.01, 0.47, 1); }
+    .pricing-table__item:hover {
+      box-shadow: 0 40px 40px rgba(0, 0, 0, 0.16);
+      transform: translate(0, -20px); }
+    .pricing-table__item--popular {
+      position: relative; }
+      .pricing-table__item--popular::before {
+        position: absolute;
+        content: attr(data-popular);
+        top: 2em;
+        right: 2em;
+        font-size: .9em;
+        padding: 0 1em;
+        background-color: #ffd900;
+        border-radius: 1em;
+        color: #282824; }
+  .pricing-table__img {
+    margin: 2.5em auto 4em;
+    width: 100%;
+    max-width: 9.3em; }
+  .pricing-table__title {
+    margin: 0;
+    font-size: 1.5em;
+    text-transform: capitalize; }
+  .pricing-table__description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto; }
+  .pricing-table__tagline {
+    margin: 0;
+    color: #9ea0a3;
+    text-align: center; }
+  .pricing-table__price {
+    color: var(--pricing-table-color);
+    font-size: 2.5em;
+    margin: 1.5em auto 0;
+    font-weight: bold; }
+  .pricing-table__label {
+    margin: 0;
+    color: #9ea0a3;
+    font-size: .9em; }
+  .pricing-table__save {
+    color: #4cae4f;
+    font-weight: bold; }
+  .pricing-table__products {
+    margin: 1.87em 0;
+    padding: 0;
+    list-style-type: none;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+  .pricing-table__product {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: .5em; }
+    .pricing-table__product a {
+      text-decoration: none;
+      color: inherit;
+      transition: color .2s ease-in-out; }
+      .pricing-table__product a:hover {
+        color: var(--pricing-table-color); }
+    .pricing-table__product::before {
+      content: ' ';
+      width: .5em;
+      height: .5em;
+      margin-inline-end: 1em;
+      border-radius: 50%;
+      background-color: var(--pricing-table-color); }
+    .pricing-table__product--excluded::before {
+      content: ' ';
+      width: .5em;
+      height: .5em;
+      margin-inline-end: 1em;
+      border-radius: 0;
+      color: red;
+      background: no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 20 20' id='entypo-cross' width='32' height='32' fill='hsl(4, 90%, 58%)'%3E%3Cg%3E%3Cpath d='M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z'/%3E%3C/g%3E%3C/svg%3E") center/contain;
+      transform: scale(2.5); }
+  .pricing-table__button {
+    background: var(--pricing-table-color);
+    color: #fff;
+    margin-top: auto;
+    padding: 1em 2em;
+    text-decoration: none;
+    width: 100%;
+    border-radius: 1.87em;
+    text-align: center;
+    transition: background .2s ease-in-out;
+    text-transform: capitalize; }
+    .pricing-table__button:hover {
+      background-color: #4cae4f; }

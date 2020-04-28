@@ -1,0 +1,19 @@
+{
+  "name": "pricing-table",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Mojtaba Seyedi",
+  "license": "MIT",
+  "scripts": {
+    "sass": "node-sass styles/styles.scss styles/styles.css",
+    "watch": "onchange \"styles/**/*.scss\" -- npm run sass",
+    "server": "browser-sync start --server ./ --files styles/*.css, *.html",
+    "serve": "run-p sass watch server"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "node-sass": "^4.11.0",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^5.2.0"
+  }
+}
